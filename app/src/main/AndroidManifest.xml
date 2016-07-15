@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="de.ludetis.android.wear2moonphase"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature android:name="android.hardware.type.watch"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".MoonphaseProviderService"
+                 android:label="@string/complications_provider_moonphase"
+                 android:icon="@drawable/phase4">
+
+            <intent-filter>
+                <action android:name="android.support.wearable.complications.ACTION_COMPLICATION_UPDATE_REQUEST"/>
+            </intent-filter>
+
+            <meta-data android:name="android.support.wearable.complications.SUPPORTED_TYPES"
+                       android:value="SMALL_IMAGE"/>
+            <!--
+            When your complication data provider is active, UPDATE_PERIOD_SECONDS specifies how
+            often you want the system to check for updates to the data. In this case, the time is
+            specified to a relatively short 120 seconds, so we can observe the result of this code
+            lab. In everyday use, developers should consider intervals in the order of minutes.
+            Also, remember that this is only a guidance for the system. Android Wear may update less
+            frequently.
+            If your app needs to push updates instead of updating on a regular schedule, you should
+            set this value to 0 and use ProviderUpdateRequester.requestUpdate() to trigger an update
+            request when you need one.
+            -->
+            <meta-data android:name="android.support.wearable.complications.UPDATE_PERIOD_SECONDS"
+                       android:value="120"/>
+        </service>
+
+    </application>
+
+</manifest>

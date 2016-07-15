@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Moonphase</string>
+    <string name="info">Moon Phase - add the complication to a compatible watch face using its configuration</string>
+    <string name="complications_provider_moonphase">Moon Phase</string>
+</resources>
