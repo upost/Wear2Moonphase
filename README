@@ -1,0 +1,8 @@
+Showcase for Android Wear 2.0 Complication, showing the current moonphase.
+
+To add to a compatible Wear 2.0 watch face, use the watch face configuration.
+The app's acctivity actually does nothing but showing this information.
+
+The moonphase calculation and images are taken from public domain code.
+
+This code is subject to the Apache 2.0 Open Source License.
